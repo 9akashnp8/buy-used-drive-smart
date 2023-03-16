@@ -9,13 +9,29 @@ function SearchForm() {
     const [url, setUrl] = useState('');
     const [loading, setLoading] = useState(false);
 
-    function handleSubmit(event) {
+    async function handleSubmit(event) {
         event.preventDefault();
         setLoading(true);
-        console.log(`Search URL: ${url}`);
-        setTimeout(() => {
-            setLoading(false);
-          }, 3000);
+        try {
+            const response = await fetch('http://127.0.0.1:8000/analyzer', {
+                method: 'POST',
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({url: url})
+            });
+
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`)
+            }
+
+            const data = await response.json();
+            console.log(data)
+        } catch(error) {
+            console.log(error);
+        }
+        setLoading(false);
     }
 
     function handleUrlChange(event) {
