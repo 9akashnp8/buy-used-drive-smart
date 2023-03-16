@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "buy-used-drive-smart"
+version = "0.1.0"
+description = "Analyze the used marked (olx) for the car/bike of your dreams and learn how buying used is more benefitial that new."
+authors = ["Akash NP <akashnp1998@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+packages = [{include = "buy_used_drive_smart"}]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+fastapi = "^0.94.1"
+uvicorn = {extras = ["standard"], version = "^0.21.1"}
+olx-scraper = "^0.0.2"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
