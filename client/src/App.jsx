@@ -1,9 +1,12 @@
+import { useState } from "react"
 import { Box } from "@chakra-ui/react"
 
 import Hero from "./components/Hero"
 import SearchForm from "./components/SearchForm"
+import BaseTable from "./components/Table"
 
 function App() {
+  const [data, setData] = useState('');
 
   return (
     <Box
@@ -15,7 +18,16 @@ function App() {
       mt={20}
     >
       <Hero/>
-      <SearchForm/>
+      <SearchForm setData={setData}/>
+      {Object.entries(data).map(([metric, result]) => {
+        return (
+          <BaseTable
+            key={metric}
+            metric={metric}
+            result={result}
+          />
+        )
+      })}
     </Box>
   )
 }

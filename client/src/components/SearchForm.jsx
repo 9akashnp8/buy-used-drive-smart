@@ -5,7 +5,7 @@ import {
 } from "@chakra-ui/react";
 import { useState } from "react";
 
-function SearchForm() {
+function SearchForm({setData}) {
     const [url, setUrl] = useState('');
     const [loading, setLoading] = useState(false);
 
@@ -27,7 +27,8 @@ function SearchForm() {
             }
 
             const data = await response.json();
-            console.log(data)
+            setData(data);
+            // console.log(data)
         } catch(error) {
             console.log(error);
         }
