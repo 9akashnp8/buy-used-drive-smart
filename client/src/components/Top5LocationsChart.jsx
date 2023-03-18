@@ -32,9 +32,7 @@ export const options = {
     },
 };
 
-const labels = ['Kochi', 'Alapuzha', 'Kottayam', 'Thrissur'];
-
-function PriceByLocationChart({data}) {
+function Top5LocationsChart({data}) {
     
   if (!data) {
     return (
@@ -46,7 +44,7 @@ function PriceByLocationChart({data}) {
     labels: data.labels,
     datasets: [
       {
-        label: "Average Price by Location",
+        label: "Top 5 Cities with Ads",
         data: data.data,
         backgroundColor: 'rgba(255, 99, 132, 0.5)',
       }
@@ -67,4 +65,4 @@ function PriceByLocationChart({data}) {
   )
 }
 
-export default PriceByLocationChart;
+export default Top5LocationsChart;

@@ -4,7 +4,9 @@ import { Box } from "@chakra-ui/react"
 import Hero from "./components/Hero"
 import SearchForm from "./components/SearchForm"
 import BaseTable from "./components/Table"
+import PriceByLocationChart from "./components/PriceByLocationChart"
 import PriceByYearChart from "./components/PriceByYearChart"
+import Top5LocationsChart from "./components/Top5LocationsChart"
 
 function App() {
   const [data, setData] = useState('');
@@ -22,8 +24,14 @@ function App() {
         <Hero/>
         <SearchForm setData={setData}/>
       </Box>
-      <PriceByYearChart
+      <PriceByLocationChart
         data={data.avg_price_by_city}
+      />
+      <PriceByYearChart
+        data={data.avg_price_by_year}
+      />
+      <Top5LocationsChart
+        data={data.top_5_cities_with_ads}
       />
     </>
   )
