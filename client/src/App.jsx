@@ -3,6 +3,7 @@ import { Box } from "@chakra-ui/react"
 
 import Hero from "./components/Hero"
 import SearchForm from "./components/SearchForm"
+import BaseTable from "./components/Table"
 import PriceByYearChart from "./components/PriceByYearChart"
 
 function App() {
@@ -21,7 +22,9 @@ function App() {
         <Hero/>
         <SearchForm setData={setData}/>
       </Box>
-      <PriceByYearChart/>
+      <PriceByYearChart
+        data={data.avg_price_by_city}
+      />
     </>
   )
 }

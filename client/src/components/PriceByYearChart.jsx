@@ -34,31 +34,37 @@ export const options = {
 
 const labels = ['Kochi', 'Alapuzha', 'Kottayam', 'Thrissur'];
 
-export const data = {
-    labels,
+function PriceByYearChart({data}) {
+    
+  if (!data) {
+    return (
+      <div>Loading...</div>
+    )
+  }
+
+  const chartData = {
+    labels: data.labels,
     datasets: [
       {
-        label: 'Average Price by Location',
-        data: [10, 2, 13, 4],
+        label: "Average Price by Location",
+        data: data.data,
         backgroundColor: 'rgba(255, 99, 132, 0.5)',
       }
-    ],
-};
-
-function PriceByYearChart() {
-    
-    return (
-        <Box
-            w={'85%'}
-            mx={'auto'}
-            my={5}
-        >
-            <Bar
-                data={data}
-                options={options}
-            />
-        </Box>
-    )
+    ]
+  }
+  
+  return (
+      <Box
+          w={'85%'}
+          mx={'auto'}
+          my={5}
+      >
+          <Bar
+              data={chartData}
+              options={options}
+          />
+      </Box>
+  )
 }
 
 export default PriceByYearChart;
