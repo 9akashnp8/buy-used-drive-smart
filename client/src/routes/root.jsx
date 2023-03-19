@@ -1,18 +1,19 @@
 import { useState } from "react"
 import { Box } from "@chakra-ui/react"
 
-import Hero from "./components/Hero"
-import SearchForm from "./components/SearchForm"
-import BaseTable from "./components/Table"
-import PriceByLocationChart from "./components/PriceByLocationChart"
-import PriceByYearChart from "./components/PriceByYearChart"
-import Top5LocationsChart from "./components/Top5LocationsChart"
+import Hero from "../components/Hero"
+import SearchForm from "../components/SearchForm"
+import PriceByLocationChart from "../components/PriceByLocationChart"
+import PriceByYearChart from "../components/PriceByYearChart"
+import Top5LocationsChart from "../components/Top5LocationsChart"
+import Navbar from "../components/Navbar"
 
-function App() {
+function Root() {
   const [data, setData] = useState('');
 
   return (
     <>
+      <Navbar/>
       <Box
         display="flex"
         flexDirection="column"
@@ -37,4 +38,4 @@ function App() {
   )
 }
 
-export default App
+export default Root
