@@ -30,9 +30,7 @@ export const options = {
 function Top5LocationsChart({data}) {
     
   if (!data) {
-    return (
-      <div>Loading...</div>
-    )
+    return null
   }
 
   const chartData = {

@@ -32,9 +32,7 @@ export const options = {
 function PriceByLocationChart({data}) {
     
   if (!data) {
-    return (
-      <div>Loading...</div>
-    )
+    return null
   }
 
   const chartData = {
