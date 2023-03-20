@@ -8,7 +8,11 @@ import {
     Legend,
   } from 'chart.js';
 import { Bar } from 'react-chartjs-2';
-import { Box } from "@chakra-ui/react";
+import { 
+  Heading,
+  Text
+} from '@chakra-ui/react';
+import ChartWrapper from './ChartWrapper';
 
 ChartJS.register(
     CategoryScale,
@@ -20,16 +24,7 @@ ChartJS.register(
 );
 
 export const options = {
-    responsive: true,
-    plugins: {
-      legend: {
-        position: 'top',
-      },
-    //   title: {
-    //     display: true,
-    //     text: 'Average Price by Location',
-    //   },
-    },
+    responsive: true
 };
 
 function Top5LocationsChart({data}) {
@@ -52,16 +47,14 @@ function Top5LocationsChart({data}) {
   }
   
   return (
-      <Box
-          w={'85%'}
-          mx={'auto'}
-          my={5}
-      >
-          <Bar
-              data={chartData}
-              options={options}
-          />
-      </Box>
+      <ChartWrapper>
+        <Heading>Top 5 Locations with the most Ads</Heading>
+        <Text mb={5}>View the locations with the most ads.</Text>
+        <Bar
+            data={chartData}
+            options={options}
+        />
+      </ChartWrapper>
   )
 }
 

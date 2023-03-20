@@ -20,7 +20,7 @@ function Root() {
         alignItems="stretch"
         gap={5}
         mx='20%'
-        mt={20}
+        my={20}
       >
         <Hero/>
         <SearchForm setData={setData}/>

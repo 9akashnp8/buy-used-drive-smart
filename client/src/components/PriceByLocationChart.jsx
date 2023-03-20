@@ -8,7 +8,8 @@ import {
     Legend,
   } from 'chart.js';
 import { Bar } from 'react-chartjs-2';
-import { Box } from "@chakra-ui/react";
+import { Box, Heading, Text } from "@chakra-ui/react";
+import ChartWrapper from './ChartWrapper';
 
 ChartJS.register(
     CategoryScale,
@@ -23,16 +24,10 @@ export const options = {
     responsive: true,
     plugins: {
       legend: {
-        position: 'top',
+        display: false
       },
-    //   title: {
-    //     display: true,
-    //     text: 'Average Price by Location',
-    //   },
     },
 };
-
-const labels = ['Kochi', 'Alapuzha', 'Kottayam', 'Thrissur'];
 
 function PriceByLocationChart({data}) {
     
@@ -54,16 +49,14 @@ function PriceByLocationChart({data}) {
   }
   
   return (
-      <Box
-          w={'85%'}
-          mx={'auto'}
-          my={5}
-      >
-          <Bar
-              data={chartData}
-              options={options}
-          />
-      </Box>
+      <ChartWrapper>
+        <Heading>Price by Location</Heading>
+        <Text mb={5}>See how the price of the user item varies across different locations.</Text>
+        <Bar
+            data={chartData}
+            options={options}
+        />
+      </ChartWrapper>
   )
 }
 
