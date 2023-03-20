@@ -19,7 +19,11 @@ function Navbar() {
             py={5}
         >
             <HStack spacing={16}>
-                <Heading size='xl'>BUDS</Heading>
+                <Heading size='xl'>
+                    <Link as={RouterLink} to="/">
+                        BUDS
+                    </Link>
+                </Heading>
                 <Text fontSize='lg'>
                     <Link as={RouterLink} to="/about/">
                         About
