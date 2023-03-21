@@ -12,6 +12,7 @@ python = "^3.8"
 fastapi = "^0.94.1"
 uvicorn = {extras = ["standard"], version = "^0.21.1"}
 olx-scraper = "^0.0.2"
+gunicorn = "^20.1.0"
 
 
 [build-system]
