@@ -13,7 +13,7 @@ function SearchForm({setData}) {
         event.preventDefault();
         setLoading(true);
         try {
-            const response = await fetch('http://127.0.0.1:8000/analyzer', {
+            const response = await fetch('http://127.0.0.1:8000/api/analyzer', {
                 method: 'POST',
                 headers: {
                     'Accept': 'application/json',

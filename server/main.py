@@ -18,11 +18,11 @@ app.add_middleware(
 )
 
 
-@app.get("/")
+@app.get("/api")
 def root():
     return {"message": "BUDS Root"}
 
-@app.post("/analyzer")
+@app.post("/api/analyzer")
 def analyzed_url(payload: SearchUrlModel):
     search_url = payload.url
     data = get_analyzed_data(url=search_url)
