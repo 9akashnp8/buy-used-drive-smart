@@ -14,7 +14,8 @@ sentry_sdk.init(
 app = FastAPI()
 
 allowed_origins = [
-    "http://localhost:5173"
+    "http://localhost:5173",
+    "https://buds.akashnp.dev"
 ]
 app.add_middleware(
     CORSMiddleware,
