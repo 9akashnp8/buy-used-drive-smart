@@ -1,0 +1,10 @@
+name: Deployment
+on:
+  release:
+    types: [published]
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v2
